@@ -31,8 +31,8 @@ const ListaCliente = ({tema , seletorView}) => {
 
     return (
         <>
-            <div className="px-5 mx-5 py-4">
-                <h1 className="pb-4">Lista de Clientes</h1>
+            <div className="px-5 mx-5 pt-4">
+                <h1>Lista de Clientes</h1>
             </div>
             
             {mensagemErro && (     
