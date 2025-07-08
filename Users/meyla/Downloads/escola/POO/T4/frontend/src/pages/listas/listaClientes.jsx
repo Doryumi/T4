@@ -94,18 +94,20 @@ const ListaCliente = ({tema , seletorView}) => {
                                         <div className="col d-flex flex-column">
                                             <h5>Endereço</h5>
                                             <span>
-                                                {cliente.endereco.rua || 'Rua Não Enconstrada'}, {`nº ${cliente.endereco.numero}` || 'Número Não Encontrado'} - {cliente.endereco.bairro || 'Bairro Não Encontrado'}, {cliente.endereco.cidade || 'Cidade Não Encontrada'} - {cliente.endereco.estado || 'Estado Não Encontrado'}
+                                                {cliente.endereco.rua || 'Rua Não Encontrada'}, {`nº ${cliente.endereco.numero}` || 'Número Não Encontrado'} - {cliente.endereco.bairro || 'Bairro Não Encontrado'}, {cliente.endereco.cidade || 'Cidade Não Encontrada'} - {cliente.endereco.estado || 'Estado Não Encontrado'}
                                             </span>
                                             <span>
                                                 {cliente.endereco.codigoPostal || 'CEP não encontrado'}
                                             </span>
+                                            <span>
+                                                {cliente.endereco.complemento && (
+                                                    <div className="col d-flex flex-column">
+                                                        <h5>Complemento</h5>
+                                                        <span>{cliente.endereco.complemento} </span>
+                                                    </div>
+                                                )}
+                                            </span>
                                         </div>
-                                        {cliente.endereco.complemento && (
-                                            <div className="col d-flex flex-column">
-                                                <h5>Complemento</h5>
-                                                <span>{cliente.endereco.complemento} </span>
-                                            </div>
-                                        )}
                                         <br />
                                     </div>
                                 )}
@@ -184,14 +186,12 @@ const ListaCliente = ({tema , seletorView}) => {
                                     <div className="col">
                                         <button className="btn btn-outline-warning w-100" 
                                         onClick={(e) => seletorView('CadastroCliente' , e, cliente)} >
-                                            <i className="bi bi-pencil-fill"></i> 
                                             Atualizar 
                                         </button>
                                     </div>
                                     
                                     <div className="col">
                                         <button className="btn btn-outline-danger w-100" onClick={() => deletar(cliente.id)}>
-                                            <i className="bi bi-trash-fill"></i> 
                                             Remover 
                                         </button>
                                         

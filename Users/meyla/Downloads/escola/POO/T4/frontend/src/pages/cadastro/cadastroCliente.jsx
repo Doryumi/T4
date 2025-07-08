@@ -11,7 +11,7 @@ const CadastroCliente = ({tema , cliente}) => {
     const [cidade , setCidade] = useState('')
     const [bairro , setBairro] = useState('')
     const [rua , setRua] = useState('')
-    const [numeroEndereco , setNumeroEndereco] = useState()
+    const [numeroEndereco , setNumeroEndereco] = useState('')
     const [complementoEndereco , setComplementoEndereco] = useState('')
 
     const [telefones , setTelefones] = useState([])
@@ -178,7 +178,7 @@ const CadastroCliente = ({tema , cliente}) => {
                                 <td>{telefone.numero}</td>
                                 <td style={{width:'10px'}}>
                                     <button className="btn btn-outline-danger" type="button" onClick={() => removerTel(index)}>
-                                        <i className="Excluir"></i>
+                                       Remover
                                     </button>
                                 </td>
                             </tr>
